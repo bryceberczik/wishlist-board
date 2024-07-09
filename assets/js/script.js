@@ -1,17 +1,25 @@
-const wish = document.getElementById("wish");
+const wishTitle = document.getElementById("wish");
 const catagories = document.getElementById("catagorie");
 const img = document.getElementById("img");
-
+const sumbit = document.getElementById("sumbit");
 
 let wishBoard = [];
 
-function saveWishs(){
-    const wish = {
-        wish: wish.value.trim(),
-        catagories: catagories.value,
-        img: img.value
-    };
-    if (
-        
-    )
+function saveWishs() {
+  const wish = {
+    wish: wishTitle.value.trim(),
+    catagories: catagories.value,
+    img: img.value,
+  };
+  if (wish.wishTitle === "" || wish.catagories === "" || wish.img === "") {
+    alert("Please complete the enire form");
+  } else {
+    wishBoard.push(wish);
+    localStorage.setItem("wish", JSON.stringify(wishBoard));
+  }
 }
+
+sumbit.addEventListener("click", function (event) {
+  event.preventDefault();
+  saveWishs();
+});
