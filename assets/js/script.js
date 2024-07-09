@@ -1,6 +1,6 @@
 const wishTitle = document.getElementById("wish");
-const catagories = document.getElementById("catagorie");
-const img = document.getElementById("img");
+const catagories = document.getElementById("category");
+const img = document.getElementById("image-url");
 const sumbit = document.getElementById("sumbit");
 
 let wishBoard = [];
