@@ -15,17 +15,7 @@ body {
   header h1 {
     margin: 0;
   }
-  #add-wish-btn {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  #add-wish-btn:hover {
-    background-color: #0056B3;
-  }
+  
   nav ul {
     display: flex;
     justify-content: space-around;
@@ -53,7 +43,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensures it's above other elements */
+    z-index: 1000;
   }
   #close-form-btn {
     position: absolute;
@@ -124,4 +114,9 @@ body {
     border: none;
     cursor: pointer;
     font-size: 16px;
+  }
+
+  #btn-custom-1 {
+
+    height: 44px;
   }
