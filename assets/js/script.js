@@ -39,6 +39,6 @@ function renderWishes() {
     deletebtn.textContent = "X";
 
     li.appendChild(deletebtn);
-    todoList.appendChild(li);
+    wishList.appendChild(li);
   }
 }
