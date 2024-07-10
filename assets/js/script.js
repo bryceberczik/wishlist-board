@@ -25,20 +25,20 @@ submitBtn.addEventListener("click", function (event) {
   saveWishes();
 });
 
-// function renderWishes() {
-//   wishList.innerHTML = "";
+function renderWishes() {
+  wishList.innerHTML = "";
 
-//   for (let i = 0; i < wishBoard.length; i++) {
-//     const wish = wishBoard[i];
+  for (let i = 0; i < wishBoard.length; i++) {
+    const wish = wishBoard[i];
 
-//     const li = document.createElement("li");
-//     li.textContent = wish;
-//     li.setAttribute("data-index", i);
+    const li = document.createElement("li");
+    li.textContent = wish;
+    li.setAttribute("data-index", i);
 
-//     const button = document.createElement("button");
-//     button.textContent = "X";
+    const deletebtn = document.createElement("????");
+    deletebtn.textContent = "X";
 
-//     li.appendChild(button);
-//     wishList.appendChild(li);
-//   }
-// }
+    li.appendChild(deletebtn);
+    wishList.appendChild(li);
+  }
+}
