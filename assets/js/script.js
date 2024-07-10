@@ -1,28 +1,28 @@
 const wishTitle = document.getElementById("wish");
-const catagories = document.getElementById("category");
+const category = document.getElementById("category");
 const img = document.getElementById("image-url");
-const sumbit = document.getElementById("sumbit");
+const submitBtn = document.getElementById("submit");
 const wishList = document.getElementById("wishes-list");
 
 let wishBoard = [];
 
-function saveWishs() {
+function saveWishes() {
   const wish = {
     wish: wishTitle.value.trim(),
-    catagories: catagories.value,
+    category: category.value,
     img: img.value,
   };
-  if (wish.wishTitle === "" || wish.catagories === "" || wish.img === "") {
+  if (wish.wish === "" || wish.category === "" || wish.img === "") {
     alert("Please complete the enire form");
   } else {
     wishBoard.push(wish);
-    localStorage.setItem("wish", JSON.stringify(wishBoard));
+    localStorage.setItem("wishs", JSON.stringify(wishBoard));
   }
 }
 
-sumbit.addEventListener("click", function (event) {
+submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  saveWishs();
+  saveWishes();
 });
 
 function renderWishes() {
