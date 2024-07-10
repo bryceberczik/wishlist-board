@@ -147,3 +147,8 @@ body {
 
     height: 44px;
   }
+
+  #btn-custom-2 {
+
+    background-image: linear-gradient(to right, #540DDB , #880DDB);
+  }
