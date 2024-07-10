@@ -36,10 +36,10 @@ function renderWishes() {
     li.textContent = wish;
     li.setAttribute("data-index", i);
 
-    const deletebtn = document.createElement("????");
-    deletebtn.textContent = "X";
+    const button = document.createElement("button");
+    button.textContent = "X";
 
-    li.appendChild(deletebtn);
+    li.appendChild(button);
     wishList.appendChild(li);
   }
 }
