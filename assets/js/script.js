@@ -38,7 +38,12 @@ function renderWishes() {
     const deletebtn = document.createElement("????");
     deletebtn.textContent = "X";
 
+
     li.appendChild(deletebtn);
     wishList.appendChild(li);
   }
 }
+//     li.appendChild(button);
+//     wishList.appendChild(li);
+//   }
+// }
