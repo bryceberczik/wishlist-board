@@ -42,3 +42,5 @@ submitBtn.addEventListener("click", function (event) {
 //     wishList.appendChild(li);
 //   }
 // }
+const x = 1;
+const y = 3;
