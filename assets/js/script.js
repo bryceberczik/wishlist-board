@@ -3,11 +3,10 @@ const category = document.getElementById("category");
 const img = document.getElementById("image-url");
 const submitBtn = document.getElementById("submit");
 const wishList = document.getElementById("wishes-list");
-const deleteBtn = document.getElementById("btn-custom-1");
 
 let wishBoard = [];
 
-function saveWishs() {
+function saveWishes() {
   const wish = {
     wish: wishTitle.value.trim(),
     category: category.value,
@@ -23,7 +22,7 @@ function saveWishs() {
 
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  saveWishs();
+  saveWishes();
 });
 
 function renderWishes() {
