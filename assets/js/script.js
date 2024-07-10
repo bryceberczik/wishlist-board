@@ -3,11 +3,10 @@ const category = document.getElementById("category");
 const img = document.getElementById("image-url");
 const submitBtn = document.getElementById("submit");
 const wishList = document.getElementById("wishes-list");
-const deleteBtn = document.getElementById("btn-custom-1");
 
 let wishBoard = [];
 
-function saveWishs() {
+function saveWishes() {
   const wish = {
     wish: wishTitle.value.trim(),
     category: category.value,
@@ -23,23 +22,23 @@ function saveWishs() {
 
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  saveWishs();
+  saveWishes();
 });
 
-function renderWishes() {
-  wishList.innerHTML = "";
+// function renderWishes() {
+//   wishList.innerHTML = "";
 
-  for (let i = 0; i < wishBoard.length; i++) {
-    const wish = wishBoard[i];
+//   for (let i = 0; i < wishBoard.length; i++) {
+//     const wish = wishBoard[i];
 
-    const li = document.createElement("li");
-    li.textContent = wish;
-    li.setAttribute("data-index", i);
+//     const li = document.createElement("li");
+//     li.textContent = wish;
+//     li.setAttribute("data-index", i);
 
-    const button = document.createElement("button");
-    button.textContent = "X";
+//     const button = document.createElement("button");
+//     button.textContent = "X";
 
-    li.appendChild(button);
-    wishList.appendChild(li);
-  }
-}
+//     li.appendChild(button);
+//     wishList.appendChild(li);
+//   }
+// }
