@@ -16,7 +16,7 @@ function saveWishes() {
     alert("Please complete the enire form");
   } else {
     wishBoard.push(wish);
-    localStorage.setItem("wishs", JSON.stringify(wishBoard));
+    localStorage.setItem("wishes", JSON.stringify(wishBoard));
   }
 }
 
@@ -25,25 +25,32 @@ submitBtn.addEventListener("click", function (event) {
   saveWishes();
 });
 
-function renderWishes() {
-  wishList.innerHTML = "";
+// function renderWishes() {
+//   wishList.innerHTML = "";
 
-  for (let i = 0; i < wishBoard.length; i++) {
-    const wish = wishBoard[i];
+//   for (let i = 0; i < wishBoard.length; i++) {
+//     const wish = wishBoard[i];
 
-    const li = document.createElement("li");
-    li.textContent = wish;
-    li.setAttribute("data-index", i);
+//     const li = document.createElement("li");
+//     li.textContent = wish;
+//     li.setAttribute("wish-index", i);
 
-    const deletebtn = document.createElement("????");
-    deletebtn.textContent = "X";
+//     const card = document.createElement("div");
+//     card.setAttribute("class", "wish-card ");
+//     // card.textContent = "X";
 
-
-    li.appendChild(deletebtn);
-    wishList.appendChild(li);
-  }
-}
-//     li.appendChild(button);
+//     li.appendChild(card);
 //     wishList.appendChild(li);
 //   }
 // }
+
+// function init() {
+//   const storeWishes = JSON.parse(localStorage.getItem("wishes"));
+
+//   if (storeWishes !== null) {
+//     wishes = storeWishes;
+//   }
+
+//   renderWishes();
+// }
+
