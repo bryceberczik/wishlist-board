@@ -25,32 +25,32 @@ submitBtn.addEventListener("click", function (event) {
   saveWishes();
 });
 
-// function renderWishes() {
-//   wishList.innerHTML = "";
+function renderWishes() {
+  wishList.innerHTML = "";
 
-//   for (let i = 0; i < wishBoard.length; i++) {
-//     const wish = wishBoard[i];
+  for (let i = 0; i < wishBoard.length; i++) {
+    const wish = wishBoard[i];
 
-//     const li = document.createElement("li");
-//     li.textContent = wish;
-//     li.setAttribute("wish-index", i);
+    const li = document.createElement("li");
+    li.textContent = wish;
+    li.setAttribute("wish-index", i);
 
-//     const card = document.createElement("div");
-//     card.setAttribute("class", "wish-card ");
-//     // card.textContent = "X";
+    const card = document.createElement("div");
+    card.setAttribute("class", "wish-card ");
+    // card.textContent = "X";
 
-//     li.appendChild(card);
-//     wishList.appendChild(li);
-//   }
-// }
+    li.appendChild(card);
+    wishList.appendChild(li);
+  }
+}
 
-// function init() {
-//   const storeWishes = JSON.parse(localStorage.getItem("wishes"));
+function init() {
+  const storeWishes = JSON.parse(localStorage.getItem("wishes"));
 
-//   if (storeWishes !== null) {
-//     wishes = storeWishes;
-//   }
+  if (storeWishes !== null) {
+    wishes = storeWishes;
+  }
 
-//   renderWishes();
-// }
+  renderWishes();
+}
 
