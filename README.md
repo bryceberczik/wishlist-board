@@ -20,7 +20,7 @@ For now this Application can be installed because we are still in the early stag
 - Moaaied Badri Github- moayed10111
 - Rolando Mendoza Github-Rolando1107
 - Ronah Nkatha Github- https://github.com/RonahNkatha
-## Licence
-'To be discussed"
+## License
+"To be discussed"
 ## Features
 'to be added after we are done with the project"
