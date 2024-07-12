@@ -32,10 +32,10 @@ submitBtn.addEventListener("click", function (event) {
 
 function renderWishes() {
   const data = JSON.parse(localStorage.getItem("wishes"));
-  for (let i = 0; i < wishBoard.length; i++) {
-    const obj = wishBoard[i];
+  // for (let i = 0; i < wishBoard.length; i++) {
+  //   const obj = wishBoard[i];
 
-    // data.forEach((obj) => {
+    data.forEach((obj) => {
     const div = document.createElement("div");
     div.setAttribute("class", "wish-card");
     const img = document.createElement("img");
@@ -52,7 +52,7 @@ function renderWishes() {
     div.appendChild(img);
     wishList.appendChild(div);
   }
-}
+)}
 
 // function renderWishes() {
 //   // wishList.innerHTML = "";
