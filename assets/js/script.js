@@ -36,9 +36,9 @@ function renderWishes() {
   for (let i = 0; i < wishBoard.length; i++) {
     const wish = wishBoard[i];
 
-    // const cardDiv = document.createElement("div");
-    // cardDiv.textContent = wish;
-    // cardDiv.setAttribute("wish-index", i);
+    const cardDiv = document.createElement("div");
+    cardDiv.textContent = wish.wish[i];
+    cardDiv.setAttribute("wish-index", i);
 
     const card = document.createElement("div");
     card.textContent = wish;
