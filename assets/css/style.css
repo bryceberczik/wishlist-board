@@ -66,6 +66,12 @@ body.dark-mode .wish-card {
   color: grey;
 }
 
+#error {
+
+  color: red;
+  font-size: 15px;
+}
+
 h2 {
   margin: 25px;
   color: inherit; /* Inherit text color from parent */
