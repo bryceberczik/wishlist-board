@@ -21,6 +21,6 @@ For now this Application can be installed because we are still in the early stag
 - Rolando Mendoza Github-Rolando1107
 - Ronah Nkatha Github- https://github.com/RonahNkatha
 ## License
-"To be discussed"
+To be discussed
 ## Features
-'to be added after we are done with the project"
+to be added after we are done with the project
