@@ -7,13 +7,17 @@ const wishList = document.getElementById("wishes-list");
 let wishBoard = [];
 
 function saveWishes() {
+
+  let error = document.getElementById("error");
+
   const wish = {
     wish: wishTitle.value.trim(),
     category: category.value,
     img: img.value,
   };
   if (wish.wish === "" || wish.category === "" || wish.img === "") {
-    alert("Please complete the enire form"); // will be replaced with red error message
+    error.textContent = "All fields are required. Please fill out the form completely.";
+
   } else {
     wishBoard.push(wish);
     localStorage.setItem("wishes", JSON.stringify(wishBoard));

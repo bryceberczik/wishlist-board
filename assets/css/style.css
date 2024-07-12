@@ -1,18 +1,23 @@
+* {
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #F2F2F2; /* Light mode background */
-  color: black; /* Default text color for light mode */
+  background-color: #F2F2F2;
+  color: black;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for color */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode {
-  background-color: #333; /* Dark mode background */
-  color: white; /* Text color for dark mode */
+  background-color: #333;
+  color: white;
 }
 
 header {
@@ -28,10 +33,15 @@ header h1 {
   margin: 0;
 }
 
+body.dark-mode header {
+  background-image: linear-gradient(to right, #E63B32, #E6A832);
+  color: white;
+}
+
 main {
   flex: 1;
   padding: 20px;
-  color: inherit; /* Inherit text color from body */
+  color: inherit;
 }
 
 .header-buttons {
@@ -46,13 +56,13 @@ main {
   width: 20%;
   height: 450px;
   background-color: white;
-  color: black; /* Text color for wish card in light mode */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for color */
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode .wish-card {
-  background-color: #444; /* Background color for wish card in dark mode */
-  color: white; /* Text color for wish card in dark mode */
+  background-color: #2E2E2E;
+  color: white;
 }
 
 .close-btn {
@@ -66,9 +76,15 @@ body.dark-mode .wish-card {
   color: grey;
 }
 
+#error {
+
+  color: red;
+  font-size: 15px;
+}
+
 h2 {
   margin: 25px;
-  color: inherit; /* Inherit text color from parent */
+  color: inherit;
 }
 
 img {
@@ -83,6 +99,15 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+footer p a {
+  color: white;
+}
+
+body.dark-mode footer {
+  background-image: linear-gradient(to right, #E63B32, #E6A832);
+  color: white;
 }
 
 nav ul {
@@ -104,6 +129,24 @@ nav ul li a {
 nav ul li a:hover {
   background-color: #AA71FA;
   border-radius: 5px;
+}
+
+body.dark-mode nav ul{
+
+  background-color: #2E2E2E;
+  
+}
+
+body.dark-mode nav ul a{
+
+  color:#888;
+  
+}
+
+body.dark-mode nav ul li a:hover{
+
+  background-color: #444;
+  
 }
 
 .form-container {
@@ -180,6 +223,7 @@ button[type="submit"]:hover {
   position: relative;
   border-radius: 20px;
   width: 22%;
+  margin: 20px 20px;
   height: 450px;
   background-color: white;
   padding: 20px;
@@ -199,13 +243,80 @@ button[type="submit"]:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
 }
 
+body.dark-mode .wish-card {
+  background-color: #2E2E2E;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .btn-close {
+
+  filter: brightness(0) invert(1);
+}
+
+
+.modal-header, .modal-footer {
+
+  border-bottom: none;
+  border-top: none;
+  border-radius: 0;
+}
+
+body.dark-mode .modal-content {
+  background-color: #2E2E2E;
+  color: #888;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .form-control {
+
+  background-color: #333; 
+  border: 1px solid #444;
+  color: #888;
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+body.dark-mode  .form-select{
+
+  background-color: #333;
+  color: #888;
+  border: 1px solid #444;
+}
+
+body.dark-mode .form-control:focus, body.dark-mode .form-select:focus {
+  outline: none;
+  border-color: #E6A832;
+  box-shadow: 0 0 0 0.2rem rgba(230, 168, 50, 0.5);
+}
+
+body.dark-mode button[type="submit"] {
+
+  background-color: #E63B32;
+
+}
+
+body.dark-mode button[type="submit"]:hover {
+
+  background-color: darkred;
+
+}
+
+body.dark-mode #btn-adjust {
+
+  background-image: linear-gradient(to right, #E63B32, #E63B32);
+  border: 1px solid #E63B32;  
+}
+
 #btn-adjust {
   background-image: linear-gradient(to right, #4F9EDB, #4D75DB);
+  margin-left: 20px;
   font-size: 20px;
   width: 175px;
 }
@@ -223,7 +334,7 @@ button[type="submit"]:hover {
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin-left: 10px; /* Adjust margin as needed */
+  margin-top: 5px
 }
 
 .switch input {
@@ -257,7 +368,7 @@ button[type="submit"]:hover {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #444;
 }
 
 input:checked + .slider:before {
