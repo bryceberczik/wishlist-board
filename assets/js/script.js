@@ -40,9 +40,9 @@ function renderWishes() {
     card.textContent = wish;
     card.setAttribute("class", "col wish-card");
     // card.textContent = "X";
-
-    wishList.appendChild(card);
-    document.body.children[2].children[1].appendChild(wishList);
+    console.log(wish);
+    // wishList.appendChild(card);
+    document.getElementById('wishes-list').appendChild(card);
   }
 }
 
