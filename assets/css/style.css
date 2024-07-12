@@ -1,3 +1,8 @@
+* {
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #F2F2F2;
@@ -218,6 +223,7 @@ button[type="submit"]:hover {
   position: relative;
   border-radius: 20px;
   width: 22%;
+  margin: 20px 20px;
   height: 450px;
   background-color: white;
   padding: 20px;
@@ -237,7 +243,6 @@ button[type="submit"]:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -247,10 +252,11 @@ body.dark-mode .wish-card {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode .wish-card .btn-close {
+body.dark-mode .btn-close {
 
   filter: brightness(0) invert(1);
 }
+
 
 .modal-header, .modal-footer {
 
@@ -268,6 +274,38 @@ body.dark-mode .modal-content {
 body.dark-mode .form-control {
 
   background-color: #333; 
+  border: 1px solid #444;
+  color: #888;
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+body.dark-mode  .form-select{
+
+  background-color: #333;
+  color: #888;
+  border: 1px solid #444;
+}
+
+body.dark-mode .form-control:focus, body.dark-mode .form-select:focus {
+  outline: none;
+  border-color: #E6A832;
+  box-shadow: 0 0 0 0.2rem rgba(230, 168, 50, 0.5);
+}
+
+body.dark-mode button[type="submit"] {
+
+  background-color: #E63B32;
+
+}
+
+body.dark-mode button[type="submit"]:hover {
+
+  background-color: darkred;
+
 }
 
 body.dark-mode #btn-adjust {
@@ -275,6 +313,7 @@ body.dark-mode #btn-adjust {
   background-image: linear-gradient(to right, #E63B32, #E63B32);
   border: 1px solid #E63B32;  
 }
+
 #btn-adjust {
   background-image: linear-gradient(to right, #4F9EDB, #4D75DB);
   margin-left: 20px;
