@@ -1,33 +1,58 @@
 body {
-    font-family: "Poppins", sans-serif;
-    background-color: #F2F2F2;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: linear-gradient(to right, #540DDB , #880DDB);
-    color: white;
-    padding: 30px 20px;
-  }
-  header h1 {
-    margin: 0;
-  }
+  font-family: "Poppins", sans-serif;
+  background-color: #F2F2F2; /* Light mode background */
+  color: black; /* Default text color for light mode */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for color */
+}
 
-  main {
-    flex: 1;
-    padding: 20px;
-  }
+body.dark-mode {
+  background-color: #333; /* Dark mode background */
+  color: white; /* Text color for dark mode */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to right, #540DDB, #880DDB);
+  color: white;
+  padding: 30px 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  color: inherit; /* Inherit text color from body */
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+}
 
 .wish-card {
-
   position: relative;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   width: 20%;
   height: 450px;
+  background-color: white;
+  color: black; /* Text color for wish card in light mode */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for color */
+}
+
+body.dark-mode .wish-card {
+  background-color: #444; /* Background color for wish card in dark mode */
+  color: white; /* Text color for wish card in dark mode */
 }
 
 .close-btn {
@@ -42,142 +67,199 @@ body {
 }
 
 h2 {
-
   margin: 25px;
+  color: inherit; /* Inherit text color from parent */
 }
 
 img {
-
   margin-top: 40px;
 }
-  footer {
-    background-image: linear-gradient(to right, #540DDB , #880DDB);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    bottom: 0;
-    width: 100%;
-  }
 
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-    background-color: #BE9DF9;
-    list-style: none;
-    padding: 25px 0;
-    margin: 0;
-  }
-  nav ul li a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-    padding: 10px 20px;
-  }
-  nav ul li a:hover {
-    background-color: #AA71FA;
-    border-radius: 5px;
-  }
-  .form-container {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-
-  .custom-modal-position {
-    transform: translate(0, -10%);
+footer {
+  background-image: linear-gradient(to right, #540DDB, #880DDB);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-  #close-form-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: #888;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  input, select {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  button[type="submit"] {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  button[type="submit"]:hover {
-    background-color: #0056B3;
-  }
-  .wishes-container {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  #wishes-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .wish-card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    position: relative;
-    width: 200px;
-  }
-  .wish-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  .wish-card .delete-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  background-color: #BE9DF9;
+  list-style: none;
+  padding: 25px 0;
+  margin: 0;
+}
 
-  #btn-adjust {
+nav ul li a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+  padding: 10px 20px;
+}
 
-    background-image: linear-gradient(to right, #4F9EDB , #4D75DB);
-    font-size: 20px;
-    width: 175px;
-  }
+nav ul li a:hover {
+  background-color: #AA71FA;
+  border-radius: 5px;
+}
 
-  #btn-custom-1 {
+.form-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
 
-    height: 44px;
-  }
+.custom-modal-position {
+  transform: translate(0, -10%);
+}
 
-  #btn-custom-2 {
+#close-form-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #888;
+}
 
-    background-image: linear-gradient(to right, #540DDB , #880DDB);
-  }
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056B3;
+}
+
+.wishes-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#wishes-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wish-card {
+  position: relative;
+  border-radius: 20px;
+  width: 22%;
+  height: 450px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.wish-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.wish-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#btn-adjust {
+  background-image: linear-gradient(to right, #4F9EDB, #4D75DB);
+  font-size: 20px;
+  width: 175px;
+}
+
+#btn-custom-1 {
+  height: 44px;
+}
+
+#btn-custom-2 {
+  background-image: linear-gradient(to right, #540DDB, #880DDB);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 10px; /* Adjust margin as needed */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
