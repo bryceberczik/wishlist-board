@@ -17,6 +17,7 @@ function saveWishes() {
   };
   if (wish.wish === "" || wish.category === "" || wish.img === "") {
     error.textContent = "All fields are required. Please fill out the form completely.";
+
   } else {
     wishBoard.push(wish);
     localStorage.setItem("wishes", JSON.stringify(wishBoard));
@@ -26,6 +27,7 @@ function saveWishes() {
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
   saveWishes();
+  renderWishes();
 });
 
 function renderWishes() {
@@ -34,16 +36,17 @@ function renderWishes() {
   for (let i = 0; i < wishBoard.length; i++) {
     const wish = wishBoard[i];
 
-    const li = document.createElement("li");
-    li.textContent = wish;
-    li.setAttribute("wish-index", i);
+    // const cardDiv = document.createElement("div");
+    // cardDiv.textContent = wish;
+    // cardDiv.setAttribute("wish-index", i);
 
     const card = document.createElement("div");
-    card.setAttribute("class", "wish-card ");
+    card.textContent = wish;
+    card.setAttribute("class", "col wish-card");
     // card.textContent = "X";
-
-    li.appendChild(card);
-    wishList.appendChild(li);
+    console.log(wish);
+    // wishList.appendChild(card);
+    document.getElementById('wishes-list').appendChild(card);
   }
 }
 
@@ -51,7 +54,8 @@ function init() {
   const storeWishes = JSON.parse(localStorage.getItem("wishes"));
 
   if (storeWishes !== null) {
-    wishes = storeWishes;
+    wishBoard = storeWishes;
+    console.log(wishBoard)
   }
 
   renderWishes();
