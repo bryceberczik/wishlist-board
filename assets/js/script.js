@@ -1,9 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
+
   const wishTitle = document.getElementById("wish");
   const category = document.getElementById("category");
   const img = document.getElementById("image-url");
   const submitBtn = document.getElementById("submit");
   const wishContainer = document.querySelector(".wish-container");
+  const error = document.getElementById("error");
   let wishBoard = JSON.parse(localStorage.getItem("wishes")) || [];
   let selectedCategory = null;
 
@@ -15,14 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     if (wish.title === "" || wish.category === "" || wish.img === "") {
-      alert("Please complete the entire form");
-      return;
+      error.textContent = "All fields are required. Please fill out the form completely.";
+    } else {
+      wishBoard.push(wish);
+      localStorage.setItem("wishes", JSON.stringify(wishBoard));
+      bootstrap.Modal.getInstance(document.getElementById("add-wish-btn")).hide();
+      error.textContent = "";
+      renderWishes();
+      resetForm();
     }
-
-    wishBoard.push(wish);
-    localStorage.setItem("wishes", JSON.stringify(wishBoard));
-    renderWishes();
-    resetForm();
   }
 
   function resetForm() {
@@ -75,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   submitBtn.addEventListener("click", function (event) {
     event.preventDefault();
     saveWishes();
-    bootstrap.Modal.getInstance(document.getElementById("add-wish-btn")).hide(); // Hide the modal after submission
+     // Hide the modal after submission
   });
 
   function init() {
@@ -114,4 +116,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   init();
-});
+
