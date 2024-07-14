@@ -13,6 +13,22 @@
 </head>
 <body>
     <header>
+      <h1>Wish Board</h1>
+      <div class="header-buttons">
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+        </label>
+        <button
+          type="button"
+          id="btn-adjust"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#add-wish-btn"
+        >
+          Add new wish
+        </button>
+      </div>
         <h1>Wish Board</h1>
         <div class="header-buttons">
             <label class="switch">
@@ -80,6 +96,19 @@
             </div>
         </div>
     </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-modal-position">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>This feature is currently in development. Come back soon!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered custom-modal-position">
