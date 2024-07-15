@@ -117,3 +117,4 @@ categoryLinks.forEach((link) => {
 });
 
 init();
+
