@@ -76,11 +76,6 @@ body.dark-mode .wish-card {
   color: grey;
 }
 
-#error {
-  color: red;
-  font-size: 15px;
-}
-
 h2 {
   margin: 25px;
   color: inherit;
@@ -164,11 +159,6 @@ body.dark-mode nav ul li a:hover {
   background-color: #444;
 }
 
-#small {
-
-  display: none;
-}
-
 .form-container {
   display: none;
   position: fixed;
@@ -184,17 +174,6 @@ body.dark-mode nav ul li a:hover {
 
 .custom-modal-position {
   transform: translate(0, -10%);
-}
-
-#close-form-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: #888;
 }
 
 form {
@@ -227,11 +206,6 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #0056b3;
-}
-
-#wishes-list {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .wish-card {
@@ -330,21 +304,6 @@ body.dark-mode #btn-adjust {
 
 }
 
-#btn-adjust {
-  background-image: linear-gradient(to right, #4f9edb, #4d75db);
-  margin-left: 20px;
-  font-size: 20px;
-  width: 175px;
-}
-
-#btn-custom-1 {
-  height: 44px;
-}
-
-#btn-custom-2 {
-  background-image: linear-gradient(to right, #540ddb, #880ddb);
-}
-
 .switch {
   position: relative;
   display: inline-block;
@@ -391,8 +350,46 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+#error {
+  color: red;
+  font-size: 15px;
+}
 
-/* Media Queries */
+#small {
+
+  display: none;
+}
+
+#close-form-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #888;
+}
+
+#wishes-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#btn-adjust {
+  background-image: linear-gradient(to right, #4f9edb, #4d75db);
+  margin-left: 20px;
+  font-size: 20px;
+  width: 175px;
+}
+
+#btn-custom-1 {
+  height: 44px;
+}
+
+#btn-custom-2 {
+  background-image: linear-gradient(to right, #540ddb, #880ddb);
+}
 
 @media (max-width: 768px) {
 
