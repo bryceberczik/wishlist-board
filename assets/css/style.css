@@ -164,6 +164,11 @@ body.dark-mode nav ul li a:hover {
   background-color: #444;
 }
 
+#small {
+
+  display: none;
+}
+
 .form-container {
   display: none;
   position: fixed;
@@ -391,6 +396,12 @@ input:checked + .slider:before {
 
 @media (max-width: 768px) {
 
+nav ul li a {
+
+  font-size: 10px;
+  padding: 5px;
+}
+
 #btn-adjust {
 
   width: 125px;
@@ -415,11 +426,7 @@ input:checked + .slider:before {
     margin: 0;
     text-align: center;
   }
-  nav ul li a {
-    text-decoration: none;
-    color: black;
-    display: none;
-  }
+
   nav ul li:before {
     content: attr(data-emoji);
     font-size: 24px;
@@ -434,18 +441,7 @@ input:checked + .slider:before {
     color: #888;
   }
 }
-@media screen and (min-width: 769px) {
-  nav ul {
-    display: flex;
-    justify-content: space-between;
-  }
-  nav ul li {
-    display: block;
-  }
-  nav ul li a {
-    display: block;
-  }
-}
+
 
 /* Style all font awesome icons */
 .fa {
