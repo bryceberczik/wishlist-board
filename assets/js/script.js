@@ -116,5 +116,18 @@ categoryLinks.forEach((link) => {
   });
 });
 
+// JavaScript to handle active class on category click
+document.addEventListener('DOMContentLoaded', () => {
+  const categoryLinks = document.querySelectorAll('nav ul li a');
+  categoryLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Remove 'active' class from all links
+      categoryLinks.forEach(link => link.parentElement.classList.remove('active'));
+      // Add 'active' class to the clicked link's parent <li>
+      link.parentElement.classList.add('active');
+    });
+  });
+});
+
 init();
 
