@@ -27,43 +27,16 @@
           <input type="checkbox" id="theme-toggle" />
           <span class="slider"></span>
         </label>
-        <button
-          type="button"
-          id="btn-adjust"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#add-wish-btn"
-        >
-          Add new wish
-        </button>
+        <button type="button"id="btn-adjust"class="btn btn-primary"data-bs-toggle="modal"data-bs-target="#add-wish-btn">Add new wish</button>
       </div>
     </header>
     <nav>
-
-        <ul>
-            <li class="dropdown-toggle">
-                <a href="#">Categories <span>&#9662;</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#" id="category-activities">Activities</a></li>
-                    <li><a href="#" id="category-entertainment">Entertainment</a></li>
-                    <li><a href="#" id="category-traveling">Traveling</a></li>
-                    <li><a href="#" id="category-food">Food</a></li>
-                    <li><a href="#" id="category-other">Other</a></li>
-                </ul>
-            </li>
-            <li><a href="#" id="category-activities">Activities</a></li>
-            <li><a href="#" id="category-entertainment">Entertainment</a></li>
-            <li><a href="#" id="category-traveling">Traveling</a></li>
-            <li><a href="#" id="category-food">Food</a></li>
-            <li><a href="#" id="category-other">Other</a></li>
-        </ul>
-=======
       <ul>
-        <li><a href="#" id="category-activities">Activities</a></li>
-        <li><a href="#" id="category-entertainment">Entertainment</a></li>
-        <li><a href="#" id="category-traveling">Traveling</a></li>
-        <li><a href="#" id="category-food">Food</a></li>
-        <li><a href="#" id="category-other">Other</a></li>
+        <li data-emoji="🎨" data-emoji-active="🎨"><a href="#" class="category" data-category="activities">Activities</a></li>
+        <li data-emoji="🎬" data-emoji-active="🎬"><a href="#" class="category" data-category="entertainment">Entertainment</a></li>
+        <li data-emoji="🍌" data-emoji-active="🍌"><a href="#" class="category" data-category="food">Food</a></li>
+        <li data-emoji="✈️" data-emoji-active="✈️"><a href="#" class="category" data-category="traveling">Traveling</a></li>
+        <li data-emoji="⭐️" data-emoji-active="⭐️"><a href="#" class="category" data-category="other">Other</a></li>
       </ul>
     </nav>
 
@@ -97,12 +70,7 @@
               <div class="mb-3">
                 <label for="wish" class="form-label">Wish:</label>
                 <input
-                  type="text"
-                  class="form-control"
-                  id="wish"
-                  name="wish"
-                  required
-                />
+                  type="text"class="form-control"id="wish"name="wish" maxlength="30" required/>
                 <label for="category" class="form-label">Wish Category:</label>
                 <select
                   id="category"
