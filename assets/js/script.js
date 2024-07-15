@@ -129,5 +129,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Event listeners for emoji clicks
+  const emojis = document.querySelectorAll("nav ul li");
+  emojis.forEach(emoji => {
+    emoji.addEventListener("click", function () {
+      // Remove active class from all emojis
+      emojis.forEach(item => item.classList.remove('active'));
+      // Add active class to the clicked emoji
+      emoji.classList.add('active');
+      // Trigger click on associated category link
+      const categoryLink = emoji.querySelector('a');
+      if (categoryLink) {
+        categoryLink.click();
+      }
+    });
+  });
 init();
 
