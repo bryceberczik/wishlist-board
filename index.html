@@ -69,18 +69,10 @@
             <form id="wishForm">
               <div class="mb-3">
                 <label for="wish" class="form-label">Wish:</label>
-                <input
-                  type="text"class="form-control"id="wish"name="wish" maxlength="30" required/>
+                <input type="text" class="form-control" id="wish" name="wish" maxlength="30" required />
                 <label for="category" class="form-label">Wish Category:</label>
-                <select
-                  id="category"
-                  name="category"
-                  class="form-select"
-                  required
-                >
-                  <option value="" disabled selected>
-                    Please choose an option
-                  </option>
+                <select id="category" name="category" class="form-select" required>
+                  <option value="" disabled selected>Please choose an option</option>
                   <option value="Activities">Activities</option>
                   <option value="Entertainment">Entertainment</option>
                   <option value="Traveling">Traveling</option>
@@ -88,19 +80,18 @@
                   <option value="Other">Other</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <label for="image-url" class="form-label">Image:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="image-url"
-                  name="image-url"
-                  placeholder="url:"
-                />
+              <div class="mb-3" id="url-input">
+                <label for="image-url" class="form-label">Image URL:</label>
+                <input type="text" class="form-control" id="image-url" name="image-url" placeholder="url:" />
               </div>
+              <div class="mb-3" id="file-input" style="display: none;">
+                <label for="image-file" class="form-label">Upload Image:</label>
+                <input type="file" class="form-control" id="image-file" name="image-file" accept="image/*" />
+              </div>
+              <button type="button" class="btn btn-secondary" id="toggle-input">Switch to File Upload</button>
               <p id="error">&nbsp;</p>
             </form>
-          </div>
+          </div>          
           <div class="modal-footer">
             <div class="container-fluid">
               <div class="row">
