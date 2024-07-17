@@ -1,23 +1,55 @@
 const wishTitle = document.getElementById("wish");
 const category = document.getElementById("category");
 const img = document.getElementById("image-url");
+const fileInput = document.getElementById("image-file");
 const submitBtn = document.getElementById("submit");
+const toggleInputBtn = document.getElementById("toggle-input");
+const urlInputDiv = document.getElementById("url-input");
+const fileInputDiv = document.getElementById("file-input");
 const wishContainer = document.querySelector(".wish-container");
 const error = document.getElementById("error");
 const empty = document.getElementById("empty-list");
 let wishBoard = JSON.parse(localStorage.getItem("wishes")) || [];
 let selectedCategory = null;
+let useFileInput = false;
 
-function saveWishes() {
+toggleInputBtn.addEventListener("click", () => {
+  useFileInput = !useFileInput;
+  if (useFileInput) {
+    urlInputDiv.style.display = "none";
+    fileInputDiv.style.display = "block";
+    toggleInputBtn.textContent = "Switch to URL Input";
+  } else {
+    urlInputDiv.style.display = "block";
+    fileInputDiv.style.display = "none";
+    toggleInputBtn.textContent = "Switch to File Upload";
+  }
+});
+
+submitBtn.addEventListener("click", async function (event) {
+  event.preventDefault();
+  if (useFileInput && fileInput.files[0]) {
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      saveWish(e.target.result);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    saveWish(img.value.trim());
+  }
+  // Hide the modal after submission
+});
+
+function saveWish(imageUrl) {
   const wish = {
     title: wishTitle.value.trim(),
     category: category.value,
-    img: img.value.trim(),
+    img: imageUrl,
   };
 
   if (wish.title === "" || wish.category === "" || wish.img === "") {
-    error.textContent =
-      "All fields are required. Please fill out the form completely.";
+    error.textContent = "All fields are required. Please fill out the form completely.";
   } else {
     wishBoard.push(wish);
     localStorage.setItem("wishes", JSON.stringify(wishBoard));
@@ -32,6 +64,7 @@ function resetForm() {
   wishTitle.value = "";
   category.value = "";
   img.value = "";
+  fileInput.value = "";
 }
 
 function renderWishes() {
@@ -74,12 +107,6 @@ function removeWish(wishToRemove) {
   localStorage.setItem("wishes", JSON.stringify(wishBoard));
   renderWishes();
 }
-
-submitBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-  saveWishes();
-  // Hide the modal after submission
-});
 
 function init() {
   renderWishes();
@@ -145,4 +172,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 init();
-
