@@ -1,4 +1,3 @@
-/* General Styles */
 * {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -393,6 +392,11 @@ input:checked + .slider:before {
 
 @media (max-width: 768px) {
 
+  body {
+    min-width: 375px; /* Ensure minimum width */
+    min-height: 667px; /* Ensure minimum height */
+  }
+  
 nav ul li a {
 
   font-size: 10px;
@@ -406,7 +410,7 @@ nav ul li a {
 
   .wish-card {
     width: 90%;
-    margin: 10px 5px;
+    margin: 10px auto;
   }
   .wish-card img {
     height: 150px;
