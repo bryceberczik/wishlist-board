@@ -391,12 +391,6 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 768px) {
-
-  body {
-    min-width: 375px; /* Ensure minimum width */
-    min-height: 667px; /* Ensure minimum height */
-  }
-  
 nav ul li a {
 
   font-size: 10px;
